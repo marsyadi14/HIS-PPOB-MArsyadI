@@ -57,6 +57,26 @@
       .then((resp) => resp.json())
   }
 
+  const putProfileImageFetch = async () => {
+    const token = sessionStorage.getItem("token");
+    const url =
+      "https://take-home-test-api.nutech-integrasi.com/profile/image";
+
+    const file = document.getElementById("fotoProfilBaru").files[0]
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    return await fetch(url, {
+        method: "PUT",
+        body: formData,
+        headers: {
+          Authorization: `Bearer ${token}`
+        },
+      })
+      .then((resp) => resp.json())
+  }
+
   const getProfileInfo = async () => {
     const profileUrl = "https://take-home-test-api.nutech-integrasi.com/profile";
     const balanceUrl = "https://take-home-test-api.nutech-integrasi.com/balance";
@@ -83,6 +103,54 @@
     }
   };
 
+  const editProfil = () => {
+    const editEl = document.getElementById("editBtn")
+    const logoutEl = document.getElementById("logoutBtn")
+    const simpanEl = document.getElementById("simpanBtn")
+
+    const fotoEdit = document.getElementById("fotoProfilEdit")
+    fotoEdit.classList.remove("hidden")
+
+    const fname = document.getElementById("fnama_pengguna")
+    const lname = document.getElementById("lnama_pengguna")
+
+    fname.disabled = false;
+    lname.disabled = false;
+
+    editEl.classList.add("hidden")
+    logoutEl.classList.add("hidden")
+    simpanEl.classList.remove("hidden")
+  }
+
+  const simpanProfil = () => {
+    try {
+      if (document.getElementById("fotoProfilBaru").files.length) {
+        putProfileImageFetch()
+          .then((resp => putProfileFetch()))
+          .then(resp => {
+            window.location.reload()
+          })
+      } else {
+        putProfileFetch()
+          .then(resp => {
+            window.location.reload()
+          })
+      }
+    } catch (err) {
+      console.error(err.message)
+    }
+
+  }
+
+  const photoProfileChanged = () => {
+    const file = document.getElementById("fotoProfilBaru").files[0]
+    var fr = new FileReader();
+    fr.onload = function() {
+      document.getElementById("ikon_pengguna").src = fr.result;
+    }
+    fr.readAsDataURL(file);
+  }
+
   const logout = () => {
     sessionStorage.clear()
     window.location.assign("/");
@@ -106,7 +174,12 @@ $successClass = "text-green-600";
       class="p-1 w-32 h-auto object-cover"
       src="https://raw.githubusercontent.com/marsyadi14/HIS-PPOB-MArsyadI/refs/heads/main/assets/img/profile_ikon.png"
       alt="Ikon" />
+    <label id="fotoProfilEdit" class="hidden">
+      <input type="file" name="fotoProfilBaru" id="fotoProfilBaru" accept="image/png, image/jpeg" hidden onchange="photoProfileChanged(this)">
+      <span class="absolute bottom-0 right-0 text-3xl fa-solid fa-pen-to-square text-gray-500 hover:text-gray-700"></span>
+    </label>
   </div>
+
   <h3 id="nama_pengguna" class="font-semibold text-3xl">Nama Pengguna</h3>
 
   <p class="w-full text-left">Email</p>
@@ -128,7 +201,7 @@ $successClass = "text-green-600";
       name="fnama_pengguna"
       id="fnama_pengguna"
       class="<?= $inputOutlineClass ?>"
-      placeholder="Masukkan Nama depan anda" />
+      placeholder="Masukkan Nama depan anda" disabled />
   </div>
   <p class="w-full text-left">Nama Belakang</p>
   <div class="<?= $inputClass ?>">
@@ -138,14 +211,22 @@ $successClass = "text-green-600";
       name="lnama_pengguna"
       id="lnama_pengguna"
       class="<?= $inputOutlineClass ?>"
-      placeholder="Masukkan Nama belakang anda" />
+      placeholder="Masukkan Nama belakang anda" disabled />
   </div>
+
+  <button
+    id="simpanBtn"
+    type="button"
+    class="w-full py-2 bg-red-500 hover:bg-red-400 rounded-sm cursor-pointer mb-3 hidden"
+    onclick="simpanProfil()">
+    Simpan Profil
+  </button>
 
   <button
     id="editBtn"
     type="button"
     class="w-full py-2 bg-red-500 hover:bg-red-400 rounded-sm cursor-pointer mb-3"
-    onclick="putProfileFetch()">
+    onclick="editProfil()">
     Edit Profil
   </button>
 
