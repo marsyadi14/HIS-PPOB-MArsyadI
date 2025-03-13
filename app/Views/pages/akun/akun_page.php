@@ -104,7 +104,7 @@ $successClass = "text-green-600";
     <img
       id="ikon_pengguna"
       class="p-1 w-32 h-auto object-cover"
-      src="/assets/img/profile_ikon.png"
+      src="https://raw.githubusercontent.com/marsyadi14/HIS-PPOB-MArsyadI/refs/heads/main/assets/img/profile_ikon.png"
       alt="Ikon" />
   </div>
   <h3 id="nama_pengguna" class="font-semibold text-3xl">Nama Pengguna</h3>

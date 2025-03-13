@@ -83,7 +83,7 @@ $successClass = "text-green-600";
     <div class="flex flex-row space-x-2 mb-4">
       <img
         class="p-1 h-auto object-cover ..."
-        src="/assets/img/logo_sims.png" />
+        src="https://raw.githubusercontent.com/marsyadi14/HIS-PPOB-MArsyadI/refs/heads/main/assets/img/logo_sims.png" />
       <h1 class="font-bold text-4xl">SIMS PPOB</h1>
     </div>
     <div class="w-1/3 flex flex-col items-center space-y-4">
@@ -134,7 +134,7 @@ $successClass = "text-green-600";
     </div>
   </div>
   <div>
-    <img class="h-screen object-cover" src="/assets/img/ilus_login.png" />
+    <img class="h-screen object-cover" src="https://raw.githubusercontent.com/marsyadi14/HIS-PPOB-MArsyadI/refs/heads/main/assets/img/ilus_login.png" />
   </div>
 </div>
 

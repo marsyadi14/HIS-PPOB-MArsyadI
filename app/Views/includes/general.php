@@ -14,22 +14,18 @@
     <img
       id="general_ikon_pengguna"
       class="p-1 w-20 h-auto object-cover"
-      src="/assets/img/profile_ikon.png"
-      alt="Ikon"
-    />
+      src="https://raw.githubusercontent.com/marsyadi14/HIS-PPOB-MArsyadI/refs/heads/main/assets/img/profile_ikon.png"
+      alt="Ikon" />
     <h2 class="text-xl">Selamat Datang,</h2>
     <h3 id="general_nama_pengguna" class="font-semibold text-3xl">Nama Pengguna</h3>
   </div>
   <div
-    class="flex flex-col justify-between bg-red-600 text-white rounded-lg p-6"
-  >
+    class="flex flex-col justify-between bg-red-600 text-white rounded-lg p-6">
     <p class="text-lg">Saldo Anda</p>
     <p class="font-bold text-4xl">
       Rp.
       <span id="saldoId" class="hidden">10.000</span>
-      <span id="saldoIdHidden"
-        >&#128952;&#128952;&#128952;&#128952;&#128952;</span
-      >
+      <span id="saldoIdHidden">&#128952;&#128952;&#128952;&#128952;&#128952;</span>
     </p>
     <div>
       <label class="select-none cursor-pointer">
@@ -38,8 +34,7 @@
           id="show_saldo_pengguna"
           class="hidden"
           onchange="showSaldo(this, 'show_saldo_pengguna', 'showSaldo')"
-          checked
-        />
+          checked />
         Lihat Saldo <span id="showSaldo" class="ml-1 fa-regular fa-eye"></span>
       </label>
     </div>

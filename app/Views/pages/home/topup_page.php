@@ -193,7 +193,7 @@ $successClass = "text-green-600";
 <div id="bgTopup" class="fixed h-full top-0 right-0 left-0 bg-gray-500/75 hidden">
   <div class="flex flex-col min-h-screen justify-center items-center">
     <div id="konfirmasiTopup" class="flex flex-col justify-center items-center size-72 bg-white rounded-lg space-y-2">
-      <img class="size-12 object-contain" src="/assets/img/logo_sims.png" />
+      <img class="size-12 object-contain" src="https://raw.githubusercontent.com/marsyadi14/HIS-PPOB-MArsyadI/refs/heads/main/assets/img/logo_sims.png" />
       <p>Anda yakin untuk Top-Up sebesar</p>
       <p class="text-xl font-bold">Rp. <span id="nilaiTopUp">0</span> ?</p>
       <button class="text-red-600 font-semibold hover:cursor-pointer" onclick="postTopupBalance()">Ya, lanjutkan Top-up</button>
