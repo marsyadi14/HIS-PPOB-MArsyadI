@@ -1,0 +1,228 @@
+CRITICAL - 2025-03-13 04:07:28 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layout/page_layout.php"
+[Method: GET, Route: /]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layout/page_layout.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/page_layout', [], true)
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('login_page', [], true)
+ 4 APPPATH\Controllers\Home.php(9): view('login_page')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-13 04:07:30 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layout/page_layout.php"
+[Method: GET, Route: /]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layout/page_layout.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/page_layout', [], true)
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('login_page', [], true)
+ 4 APPPATH\Controllers\Home.php(9): view('login_page')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-13 04:07:43 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layout/page_layout.php"
+[Method: GET, Route: /]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layout/page_layout.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/page_layout', [], true)
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('login_page', [], true)
+ 4 APPPATH\Controllers\Home.php(9): view('login_page')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-13 04:20:48 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "ilus_login.png)"
+[Method: GET, Route: assets/img/ilus_login.png%29]
+in SYSTEMPATH\Router\Router.php on line 739.
+ 1 SYSTEMPATH\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('assets/img/ilus_login.png)')
+ 2 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('assets/img/ilus_login.png)')
+ 3 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-13 05:33:10 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "welcome_page.php"
+[Method: GET, Route: /]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('welcome_page.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('welcome_page', [], true)
+ 3 APPPATH\Controllers\Home.php(9): view('welcome_page')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-13 05:33:14 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "welcome_page.php"
+[Method: GET, Route: /]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('welcome_page.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('welcome_page', [], true)
+ 3 APPPATH\Controllers\Home.php(9): view('welcome_page')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-13 08:41:45 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layouts/homepage.php"
+[Method: GET, Route: home]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/homepage.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layouts/homepage', null, true)
+ 3 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('layouts/body/header', null, true)
+ 4 APPPATH\Views\pages\home\home_page.php(3): CodeIgniter\View\View->include('layouts/body/header')
+ 5 SYSTEMPATH\View\View.php(224): include('D:\\Program\\XAMPP\\htdocs\\HIS-PPOB-MArsyadI\\app\\Views\\pages\\home\\home_page.php')
+ 6 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/home/home_page', [], true)
+ 8 APPPATH\Controllers\HomePage.php(9): view('pages/home/home_page')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomePage->home()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomePage))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-13 08:42:45 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layouts/homepage.php"
+[Method: GET, Route: home]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/homepage.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layouts/homepage', [], true)
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('includes/header', [], true)
+ 4 APPPATH\Views\pages\home\home_page.php(3): view('includes/header')
+ 5 SYSTEMPATH\View\View.php(224): include('D:\\Program\\XAMPP\\htdocs\\HIS-PPOB-MArsyadI\\app\\Views\\pages\\home\\home_page.php')
+ 6 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/home/home_page', [], true)
+ 8 APPPATH\Controllers\HomePage.php(9): view('pages/home/home_page')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomePage->home()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomePage))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-13 08:43:23 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layouts/homepage.php"
+[Method: GET, Route: home]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/homepage.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layouts/homepage', null, true)
+ 3 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('includes/header', null, true)
+ 4 APPPATH\Views\pages\home\home_page.php(3): CodeIgniter\View\View->include('includes/header')
+ 5 SYSTEMPATH\View\View.php(224): include('D:\\Program\\XAMPP\\htdocs\\HIS-PPOB-MArsyadI\\app\\Views\\pages\\home\\home_page.php')
+ 6 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/home/home_page', [], true)
+ 8 APPPATH\Controllers\HomePage.php(9): view('pages/home/home_page')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomePage->home()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomePage))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-13 08:44:25 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layouts/homepage.php"
+[Method: GET, Route: home]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/homepage.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layouts/homepage', [], true)
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/home/home_page', [], true)
+ 4 APPPATH\Controllers\HomePage.php(9): view('pages/home/home_page')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomePage->home()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomePage))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-13 08:45:05 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "layouts/homepage.php"
+[Method: GET, Route: home]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layouts/homepage.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layouts/homepage', [], true)
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/home/home_page', [], true)
+ 4 APPPATH\Controllers\HomePage.php(9): view('pages/home/home_page')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomePage->home()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomePage))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-13 10:40:37 --> ErrorException: Undefined variable $successClass
+[Method: GET, Route: register]
+in APPPATH\Views\pages\landing\register_page.php on line 175.
+ 1 APPPATH\Views\pages\landing\register_page.php(175): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $successClass', 'D:\\Program\\XAMPP\\htdocs\\HIS-PPOB-MArsyadI\\app\\Views\\pages\\landing\\register_page.php', 175)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\Program\\XAMPP\\htdocs\\HIS-PPOB-MArsyadI\\app\\Views\\pages\\landing\\register_page.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/landing/register_page', [], true)
+ 5 APPPATH\Controllers\LandingPage.php(14): view('pages/landing/register_page')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LandingPage->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LandingPage))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-13 10:41:10 --> ErrorException: Undefined variable $successClass
+[Method: GET, Route: register]
+in APPPATH\Views\pages\landing\register_page.php on line 177.
+ 1 APPPATH\Views\pages\landing\register_page.php(177): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $successClass', 'D:\\Program\\XAMPP\\htdocs\\HIS-PPOB-MArsyadI\\app\\Views\\pages\\landing\\register_page.php', 177)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\Program\\XAMPP\\htdocs\\HIS-PPOB-MArsyadI\\app\\Views\\pages\\landing\\register_page.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/landing/register_page', [], true)
+ 5 APPPATH\Controllers\LandingPage.php(14): view('pages/landing/register_page')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LandingPage->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LandingPage))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-13 10:41:18 --> ErrorException: Undefined variable $successClass
+[Method: GET, Route: register]
+in APPPATH\Views\pages\landing\register_page.php on line 177.
+ 1 APPPATH\Views\pages\landing\register_page.php(177): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $successClass', 'D:\\Program\\XAMPP\\htdocs\\HIS-PPOB-MArsyadI\\app\\Views\\pages\\landing\\register_page.php', 177)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\Program\\XAMPP\\htdocs\\HIS-PPOB-MArsyadI\\app\\Views\\pages\\landing\\register_page.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/landing/register_page', [], true)
+ 5 APPPATH\Controllers\LandingPage.php(14): view('pages/landing/register_page')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LandingPage->register()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LandingPage))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-13 13:57:53 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "pages/home/transaksi_pages.php"
+[Method: GET, Route: transaksi]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/home/transaksi_pages.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/home/transaksi_pages', [], true)
+ 3 APPPATH\Controllers\HomePage.php(19): view('pages/home/transaksi_pages')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomePage->transaksi()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomePage))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-13 13:58:11 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "pages/home/transaksi_pages.php"
+[Method: GET, Route: transaksi]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/home/transaksi_pages.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/home/transaksi_pages', [], true)
+ 3 APPPATH\Controllers\HomePage.php(19): view('pages/home/transaksi_pages')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomePage->transaksi()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomePage))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-13 13:58:17 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "pages/home/transaksi_pages.php"
+[Method: GET, Route: transaksi]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/home/transaksi_pages.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('pages/home/transaksi_pages', [], true)
+ 3 APPPATH\Controllers\HomePage.php(19): view('pages/home/transaksi_pages')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\HomePage->transaksi()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HomePage))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
