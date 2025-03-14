@@ -1,11 +1,13 @@
 <?= $this->extend('layouts/default') ?>
 
 <?php
-$inputClass = "p-1 flex flex-row items-center w-full border border-gray-400 rounded-sm focus-within:outline-1 focus-within:outline-red-300";
+$inputClass = "mt-2 p-1 flex flex-row items-center w-full border border-gray-400 rounded-sm focus-within:outline-1 focus-within:outline-red-300";
 $inputOutlineClass = "w-full focus:outline-none";
 
 $errorClass = "text-red-600";
 $successClass = "text-green-600";
+
+$inputErrorClass = "mb-1 text-sm font-light text-red-600 hidden";
 ?>
 
 <?= $this->section('content') ?>
@@ -18,8 +20,26 @@ $successClass = "text-green-600";
     passInp.type = el.checked ? "password" : "text";
   }
 
+  function resetInputError(inp) {
+    document.getElementById(`container_${inp}`).classList.remove("outline-2", "outline-red-500")
+    document.getElementById(`${inp}_error`).classList.add("hidden")
+    document.getElementById(`${inp}_error`).innerHTML = ""
+  }
+
+  function setInputError(inp, message) {
+    document.getElementById(`container_${inp}`).classList.add("outline-2", "outline-red-500")
+    document.getElementById(`${inp}_error`).classList.remove("hidden")
+    document.getElementById(`${inp}_error`).innerHTML = message
+  }
+
   function resetError() {
     document.getElementById("error").classList.add("hidden");
+
+    resetInputError("email")
+    resetInputError("fname")
+    resetInputError("lnama")
+    resetInputError("pass")
+    resetInputError("konfPass")
   }
 
   function setError(msg) {
@@ -76,9 +96,53 @@ $successClass = "text-green-600";
       "[name=konfirmasi_password]"
     ).value;
 
-    if (passVal !== konfPassVal) {
-      setError("Mohon tulis ulang password dengan benar");
-    } else {
+    let isError = false;
+
+    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
+    const nameRegex = /^[a-zA-Z\s]*$/
+
+    if (!emailVal) {
+      setInputError("email", "Mohon isi email")
+      isError = true
+    } else if (!emailRegex.test(emailVal)) {
+      setInputError("email", "Mohon masukkan email dengan format yang benar")
+      isError = true
+    }
+
+    if (!fNameVal) {
+      setInputError("fname", "Mohon isi nama depan")
+      isError = true
+    } else if (!nameRegex.test(fNameVal)) {
+      setInputError("fname", "Mohon hanya masukkan karakter tanpa angka")
+      isError = true
+    }
+
+    if (!lNameVal) {
+      setInputError("lnama", "Mohon isi nama belakang")
+      isError = true
+    } else if (!nameRegex.test(lNameVal)) {
+      console.log(!nameRegex.test(lNameVal))
+      setInputError("lnama", "Mohon hanya masukkan karakter tanpa angka")
+      isError = true
+    }
+
+    if (!passVal) {
+      setInputError("pass", "Mohon isi password")
+      isError = true
+    } else if (passVal.length < 8) {
+      setInputError("pass", "Mohon masukkan password dengan minimal 8 karakter")
+      isError = true
+    }
+
+    if (!konfPassVal) {
+      setInputError("konfPass", "Mohon isi konfirmasi password")
+      isError = true
+    } else if (passVal !== konfPassVal) {
+      setInputError("konfPass", "Mohon masukkan password yang sama")
+      isError = true
+    }
+
+    if (!isError) {
       postRegisterInfo(emailVal, fNameVal, lNameVal, passVal);
     }
   }
@@ -96,11 +160,11 @@ $successClass = "text-green-600";
       <img class="p-1 h-auto object-cover" src="https://raw.githubusercontent.com/marsyadi14/HIS-PPOB-MArsyadI/refs/heads/main/assets/img/logo_sims.png" />
       <h1 class="font-bold text-4xl">SIMS PPOB</h1>
     </div>
-    <div class="w-1/3 flex flex-col items-center space-y-4">
+    <div class="w-1/3 flex flex-col items-center">
       <h2 class="text-2xl text-center font-semibold text-wrap">
         Lengkapi data untuk membuat akun
       </h2>
-      <div class="<?= $inputClass ?>">
+      <div id="container_email" class="<?= $inputClass ?>">
         <span class="text-gray-400 fa-regular fa-at pr-2 pl-1"></span>
         <input
           type="email"
@@ -109,8 +173,9 @@ $successClass = "text-green-600";
           class="<?= $inputOutlineClass ?>"
           placeholder="Masukkan email anda" />
       </div>
+      <p id="email_error" class="<?= $inputErrorClass ?>"></p>
 
-      <div class="<?= $inputClass ?>">
+      <div id="container_fname" class="<?= $inputClass ?>">
         <span class="text-gray-400 fa-regular fa-user pr-2 pl-1"></span>
         <input
           type="text"
@@ -119,7 +184,9 @@ $successClass = "text-green-600";
           class="<?= $inputOutlineClass ?>"
           placeholder="Masukkan Nama depan anda" />
       </div>
-      <div class="<?= $inputClass ?>">
+      <p id="fname_error" class="<?= $inputErrorClass ?>"></p>
+
+      <div id="container_lnama" class="<?= $inputClass ?>">
         <span class="text-gray-400 fa-regular fa-user pr-2 pl-1"></span>
         <input
           type="text"
@@ -128,8 +195,9 @@ $successClass = "text-green-600";
           class="<?= $inputOutlineClass ?>"
           placeholder="Masukkan Nama belakang anda" />
       </div>
+      <p id="lnama_error" class="<?= $inputErrorClass ?>"></p>
 
-      <div class="<?= $inputClass ?>">
+      <div id="container_pass" class="<?= $inputClass ?>">
         <span class="text-gray-400 fa-solid fa-lock pr-2 pl-1"></span>
         <input
           type="password"
@@ -147,8 +215,9 @@ $successClass = "text-green-600";
           <span id="showPass" class="fa-regular fa-eye"></span>
         </label>
       </div>
+      <p id="pass_error" class="<?= $inputErrorClass ?>"></p>
 
-      <div class="<?= $inputClass ?>">
+      <div id="container_konfPass" class="<?= $inputClass ?>">
         <span class="text-gray-400 fa-solid fa-lock pr-2 pl-1"></span>
         <input
           type="password"
@@ -166,6 +235,7 @@ $successClass = "text-green-600";
           <span id="showKonf" class="fa-regular fa-eye"></span>
         </label>
       </div>
+      <p id="konfPass_error" class="<?= $inputErrorClass ?>"></p>
 
       <p id="error" class="hidden <?= $errorClass ?>"></p>
       <p id="success" class="hidden <?= $successClass ?>"></p>

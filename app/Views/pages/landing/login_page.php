@@ -1,11 +1,13 @@
 <?= $this->extend('layouts/default') ?>
 
 <?php
-$inputClass = "p-1 flex flex-row items-center w-full border border-gray-400 rounded-sm focus-within:outline-1 focus-within:outline-red-300";
+$inputClass = "mt-2 p-1 flex flex-row items-center w-full border border-gray-400 rounded-sm focus-within:outline-1 focus-within:outline-red-300";
 $inputOutlineClass = "w-full focus:outline-none";
 
 $errorClass = "text-red-600";
 $successClass = "text-green-600";
+
+$inputErrorClass = "mb-1 text-sm font-light text-red-600 hidden";
 ?>
 
 <?= $this->section('content') ?>
@@ -20,6 +22,21 @@ $successClass = "text-green-600";
 
   function resetError() {
     document.getElementById("error").classList.add("hidden");
+
+    resetInputError("email")
+    resetInputError("pass")
+  }
+
+  function resetInputError(inp) {
+    document.getElementById(`container_${inp}`).classList.remove("outline-2", "outline-red-500")
+    document.getElementById(`${inp}_error`).classList.add("hidden")
+    document.getElementById(`${inp}_error`).innerHTML = ""
+  }
+
+  function setInputError(inp, message) {
+    document.getElementById(`container_${inp}`).classList.add("outline-2", "outline-red-500")
+    document.getElementById(`${inp}_error`).classList.remove("hidden")
+    document.getElementById(`${inp}_error`).innerHTML = message
   }
 
   function setError(msg) {
@@ -33,8 +50,6 @@ $successClass = "text-green-600";
   }
 
   const postLoginInfo = async (emailVal, passVal) => {
-    resetError()
-
     const loginUrl = "https://take-home-test-api.nutech-integrasi.com/login";
     try {
       const response = await fetch(loginUrl, {
@@ -65,10 +80,34 @@ $successClass = "text-green-600";
   };
 
   function validateLogin() {
+    resetError()
+
     const emailVal = document.querySelector("[name=email_pengguna]").value;
     const passVal = document.querySelector("[name=password_pengguna]").value;
 
-    postLoginInfo(emailVal, passVal)
+    let isError = false;
+
+    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
+
+    if (!emailVal) {
+      setInputError("email", "Mohon isi email")
+      isError = true
+    } else if (!emailRegex.test(emailVal)) {
+      setInputError("email", "Mohon masukkan email dengan format yang benar")
+      isError = true
+    }
+
+    if (!passVal) {
+      setInputError("pass", "Mohon isi password")
+      isError = true
+    } else if (passVal.length < 8) {
+      setInputError("pass", "Mohon masukkan password dengan minimal 8 karakter")
+      isError = true
+    }
+
+    if (!isError) {
+      postLoginInfo(emailVal, passVal)
+    }
   }
 
   window.onload = () => {
@@ -86,11 +125,11 @@ $successClass = "text-green-600";
         src="https://raw.githubusercontent.com/marsyadi14/HIS-PPOB-MArsyadI/refs/heads/main/assets/img/logo_sims.png" />
       <h1 class="font-bold text-4xl">SIMS PPOB</h1>
     </div>
-    <div class="w-1/3 flex flex-col items-center space-y-4">
+    <div class="w-1/3 flex flex-col items-center">
       <h2 class="text-2xl text-center font-semibold text-wrap">
         Masuk atau buat akun untuk memulai
       </h2>
-      <div class="<?= $inputClass ?>">
+      <div id="container_email" class="<?= $inputClass ?>">
         <span class="text-gray-400 fa-regular fa-at pr-2 pl-1"></span>
         <input
           type="email"
@@ -99,7 +138,9 @@ $successClass = "text-green-600";
           class="<?= $inputOutlineClass ?>"
           placeholder="Masukkan email anda" />
       </div>
-      <div class="<?= $inputClass ?>">
+      <p id="email_error" class="<?= $inputErrorClass ?>"></p>
+
+      <div id="container_pass" class="<?= $inputClass ?>">
         <span class="text-gray-400 fa-solid fa-lock pr-2 pl-1"></span>
         <input
           type="password"
@@ -117,6 +158,7 @@ $successClass = "text-green-600";
           <span id="showPass" class="fa-regular fa-eye"></span>
         </label>
       </div>
+      <p id="pass_error" class="<?= $inputErrorClass ?>"></p>
 
       <p id="error" class="hidden <?= $errorClass ?>"></p>
       <p id="success" class="hidden <?= $successClass ?>"></p>
