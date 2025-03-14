@@ -13,7 +13,7 @@
   <div class="flex flex-col m-4">
     <img
       id="general_ikon_pengguna"
-      class="p-1 w-20 h-auto object-cover"
+      class="p-1 w-20 rounded-full border-2 border-gray-300 shadow-md h-auto object-cover"
       src="https://raw.githubusercontent.com/marsyadi14/HIS-PPOB-MArsyadI/refs/heads/main/assets/img/profile_ikon.png"
       alt="Ikon" />
     <h2 class="text-xl">Selamat Datang,</h2>

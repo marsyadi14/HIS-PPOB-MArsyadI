@@ -128,7 +128,7 @@ $successClass = "text-green-600";
       const saldoKini = Number((document.getElementById("saldoId").innerText).replace(".", ""));
 
       if (balance > saldoKini) {
-        throw new Error("Saldo Kurang");
+        throw new Error("Gagal<br>Saldo Kurang");
       }
 
       const response = await fetch(transactionUrl, {
@@ -242,7 +242,7 @@ $successClass = "text-green-600";
         <span class="text-6xl fa-solid"></span>
         <p>Pembayaran sebesar</p>
         <p class="text-xl font-bold">Rp. <span id="nilaiTransaksiFinal">0</span></p>
-        <p class="font-semibold text-md" id="hasilMessage"></p>
+        <p class="font-semibold text-center text-md" id="hasilMessage"></p>
         <a href="/home" class="text-red-600">Kembali ke beranda</a>
       </div>
     </div>

@@ -241,7 +241,7 @@ $inputErrorClass = "mb-1 text-sm font-light text-red-600 hidden";
       <p id="success" class="hidden <?= $successClass ?>"></p>
       <button
         type="button"
-        class="w-full py-2 bg-red-300 hover:bg-red-400 rounded-sm cursor-pointer"
+        class="w-full mt-2 py-2 bg-red-300 hover:bg-red-400 rounded-sm cursor-pointer"
         onclick="validateRegister()">
         Registrasi
       </button>

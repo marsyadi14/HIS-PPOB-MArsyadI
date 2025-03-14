@@ -146,6 +146,13 @@
     const file = document.getElementById("fotoProfilBaru").files[0]
     var fr = new FileReader();
     fr.onload = function() {
+      const maxSizeInBytes = (1024 * 1024) / 10; // 1 MB
+      if (file.size > maxSizeInBytes) {
+        alert("Ukuran gambar tidak boleh melebihi 100 kb");
+        // Clear the input and label
+        file.value = "";
+        return;
+      }
       document.getElementById("ikon_pengguna").src = fr.result;
     }
     fr.readAsDataURL(file);
@@ -171,7 +178,7 @@ $successClass = "text-green-600";
   <div class="flex flex-col m-4 relative">
     <img
       id="ikon_pengguna"
-      class="p-1 w-32 h-auto object-cover"
+      class="p-1 w-32 h-auto object-cover rounded-full border-2 border-gray-300 shadow-md "
       src="https://raw.githubusercontent.com/marsyadi14/HIS-PPOB-MArsyadI/refs/heads/main/assets/img/profile_ikon.png"
       alt="Ikon" />
     <label id="fotoProfilEdit" class="hidden">
