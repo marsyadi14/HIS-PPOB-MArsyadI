@@ -19,6 +19,12 @@ class HomePage extends BaseController
         return view('pages/home/transaksi_page');
     }
 
+    public function transaksiID(string $id): string
+    {
+        $data = ['id_servis' => $id];
+        return view('pages/home/transaksi_page', $data);
+    }
+
     public function history(): string
     {
         return view('pages/home/transaction/history_page');

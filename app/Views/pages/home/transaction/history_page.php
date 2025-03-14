@@ -134,6 +134,7 @@ $showmoreBtnClass = "py-2 px-4 text-red-400 border border-gray-400 rounded-md ho
     const token = sessionStorage.getItem("token");
 
     try {
+      document.getElementById("showmoreId").disabled = true;
       getFetch(historyUrl, token)
         .then((response) => {
           const history = response.data
@@ -141,13 +142,19 @@ $showmoreBtnClass = "py-2 px-4 text-red-400 border border-gray-400 rounded-md ho
           if (history.records.length === 5) {
             document.querySelector("[name=offsetTransaksi").value = Number(document.querySelector("[name=offsetTransaksi").value) + 5;
             setHistoryInfo(history.records)
-          } else if (history.records.length > 0)
+          } else if (history.records.length > 0) {
             setHistoryInfo(history.records)
-          else
             document.querySelector("[name=offsetTransaksi").value = -1
+            document.getElementById("showmoreId").classList.add("hidden")
+          } else {
+            document.querySelector("[name=offsetTransaksi").value = -1
+            document.getElementById("showmoreId").classList.add("hidden")
+          }
         })
     } catch (error) {
       console.error(error.message);
+    } finally {
+      document.getElementById("showmoreId").disabled = false;
     }
   }
 </script>

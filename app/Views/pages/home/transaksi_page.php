@@ -34,13 +34,41 @@ $successClass = "text-green-600";
   };
 
   const setServiceList = (services) => {
-    const jenisPembayaranSelector = document.getElementById("jenisPembayaran");
+    const servisVal = (document.getElementById("servisId").value).toUpperCase();
+
+    const imgJenis = document.getElementById("imgJenisPembayaran")
+    const jenisPembayaran = document.getElementById("jenisPembayaran")
+    const transaksiJenis = document.getElementById("transaksi_pengguna")
+    const transaksiTipe = document.getElementById("transaksiTipe")
+
+    let index = -1
 
     for (let i in services) {
-      jenisPembayaranSelector.options.add(new Option(services[i].service_name, JSON.stringify(services[i])))
+      if (servisVal === services[i].service_code) {
+        index = i;
+        break;
+      }
     }
 
-    jenisPembayaranChanged()
+    if (index >= 0) {
+      const selectedJenis = services[index]
+
+      imgJenis.src = selectedJenis.service_icon
+      transaksiJenis.value = selectedJenis.service_tariff
+      jenisPembayaran.innerHTML = selectedJenis.service_name
+      transaksiTipe.innerHTML = selectedJenis.service_name
+
+      const topupVal = document.getElementById("transaksi_pengguna").value;
+      document.getElementById("nilaiTransaksi").innerHTML = numberDotSeparator(topupVal);
+    } else {
+      document.getElementById("containerTransaksi").classList.add("hidden");
+      document.getElementById("transaksi_pengguna").classList.add("hidden");
+
+      imgJenis.classList.add("hidden")
+      jenisPembayaran.innerHTML = "Servis Tidak Ada"
+      transaksiTipe.innerHTML = "Servis Tidak Ada"
+      transaksiJenis.value = 0;
+    }
   }
 
   const getFetch = async (url, token) => {
@@ -89,12 +117,19 @@ $successClass = "text-green-600";
   };
 
   const postTransaksi = async () => {
-    const kodeServis = JSON.parse(document.getElementById("jenisPembayaran").value).service_code
-    const balance = JSON.parse(document.getElementById("jenisPembayaran").value).service_tariff
+    const kodeServis = (document.getElementById("servisId").value).toUpperCase();
+    transaksi_pengguna
+    const balance = Number(document.getElementById("transaksi_pengguna").value)
     const transactionUrl =
       "https://take-home-test-api.nutech-integrasi.com/transaction";
     try {
       const token = sessionStorage.getItem("token");
+
+      const saldoKini = Number((document.getElementById("saldoId").innerText).replace(".", ""));
+
+      if (balance > saldoKini) {
+        throw new Error("Saldo Kurang");
+      }
 
       const response = await fetch(transactionUrl, {
         method: "POST",
@@ -112,7 +147,6 @@ $successClass = "text-green-600";
       }
 
       tampilkanKonfirmasiTopup(balance, true)
-
     } catch (error) {
       tampilkanKonfirmasiTopup(balance, false, error.message)
     }
@@ -134,22 +168,6 @@ $successClass = "text-green-600";
     }
   };
 
-  function jenisPembayaranChanged() {
-    const selectedJenis = JSON.parse(document.getElementById("jenisPembayaran").value);
-
-    const imgJenis = document.getElementById("imgJenisPembayaran")
-    const transaksiJenis = document.getElementById("transaksi_pengguna")
-    const transaksiTipe = document.getElementById("transaksiTipe")
-
-    imgJenis.src = selectedJenis.service_icon
-    transaksiJenis.value = selectedJenis.service_tariff
-    transaksiTipe.innerHTML = selectedJenis.service_name
-
-    const topupVal = document.getElementById("transaksi_pengguna").value;
-
-    document.getElementById("nilaiTransaksi").innerHTML = numberDotSeparator(topupVal);
-  }
-
   function tampilkanTopup() {
     document.getElementById("bgTopup").classList.remove("hidden")
   }
@@ -164,9 +182,12 @@ $successClass = "text-green-600";
 
     if (isSuccess) {
       document.getElementById("hasilTopupSpan").classList.add(...successClass)
-      document.getElementById("errorMessage").innerHTML = msg
+      document.getElementById("hasilMessage").classList.add("text-green-600")
+      document.getElementById("hasilMessage").innerHTML = msg
     } else {
       document.getElementById("hasilTopupSpan").classList.add(...errorClass)
+      document.getElementById("hasilMessage").classList.add("text-red-600")
+      document.getElementById("hasilMessage").innerHTML = msg
     }
   }
 
@@ -182,12 +203,14 @@ $successClass = "text-green-600";
 
   <h2 class="font-semibold text-2xl mb-4">Pembayaran</h2>
 
-  <div class="flex gap-2">
+  <input type="hidden" id="servisId" value="<?= $id_servis; ?>">
+
+  <div class="flex gap-2 items-center">
     <img id="imgJenisPembayaran" src="" alt="terpilih">
-    <select class="border-2 border-gray-200 rounded-md m-1 py-2" name="jenisPembayaran" id="jenisPembayaran" onchange="jenisPembayaranChanged()"></select>
+    <p class="font-semibold text-2xl m-1 py-2" id="jenisPembayaran"></p>
   </div>
 
-  <div class="gap-2 flex flex-col">
+  <div id="containerTransaksi" class="gap-2 flex flex-col">
     <div class="<?= $inputClass ?>">
       <span class="text-gray-400 fa-regular fa-credit-card pr-2 pl-1"></span>
       <input
@@ -217,10 +240,10 @@ $successClass = "text-green-600";
       <div id="hasilTopup" class="flex flex-col justify-center items-center size-72 bg-white rounded-lg space-y-2">
         <span id="hasilTopupSpan" class="text-6xl fa-solid"></span>
         <span class="text-6xl fa-solid"></span>
-        <p>Top-Up sebesar</p>
+        <p>Pembayaran sebesar</p>
         <p class="text-xl font-bold">Rp. <span id="nilaiTransaksiFinal">0</span></p>
-        <p class="font-semibold text-lg" id="errorMessage"></p>
-        <a href="/home">Kembali ke beranda</a>
+        <p class="font-semibold text-md" id="hasilMessage"></p>
+        <a href="/home" class="text-red-600">Kembali ke beranda</a>
       </div>
     </div>
   </div>

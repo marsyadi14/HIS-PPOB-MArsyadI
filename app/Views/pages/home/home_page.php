@@ -45,13 +45,15 @@
     let daftService = []
     for (let i in services) {
       daftService.push(`
-      <div class="">
-        <img
-          class="h-20 object-contain"
-          src="${services[i].service_icon}"
-          alt="${services[i].service_code}_${services[i].service_tariff}"
-        />
-        <p class="font-light text-sm text-center text-wrap">${services[i].service_name}</p>
+      <div class="hover:opacity-75">
+        <a href="/transaksi/${services[i].service_code}">
+          <img
+            class="h-20 object-contain"
+            src="${services[i].service_icon}"
+            alt="${services[i].service_code}_${services[i].service_tariff}"
+          />
+          <p class="font-light text-sm text-center text-wrap">${services[i].service_name}</p>
+        </a>
       </div>
       `)
     }

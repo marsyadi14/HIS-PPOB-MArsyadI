@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\HomePage;
 use CodeIgniter\Router\RouteCollection;
 
 /**
@@ -10,7 +11,7 @@ $routes->get('/register', 'LandingPage::register');
 
 $routes->get('/home', 'HomePage::home');
 $routes->get('/topup', 'HomePage::topup');
-$routes->get('/transaksi', 'HomePage::transaksi');
-$routes->get('/transaksi/history', 'HomePage::history');
+$routes->get('/transaksi/(:any)', [[HomePage::class, "transaksiID"], "$1"]);
+$routes->get('/transaksi', 'HomePage::history');
 
 $routes->get('/akun', 'AkunPage::akun');

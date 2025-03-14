@@ -10,7 +10,6 @@ $navLinkClass = "font-semibold text-gray-800 text-lg"
     <div class="flex flex-row justify-end space-x-8 my-2 mx-20">
         <a href="/topup" class="<?= $navLinkClass ?>">Top Up</a>
         <a href="/transaksi" class="<?= $navLinkClass ?>">Transaksi</a>
-        <a href="/transaksi/history" class="<?= $navLinkClass ?>">History</a>
         <a href="/akun" class="<?= $navLinkClass ?>">Akun</a>
     </div>
 </header>
